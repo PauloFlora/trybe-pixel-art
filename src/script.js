@@ -13,7 +13,6 @@ for (let i = 0; i < numberOfColors; i += 1) {
 const colorBox = document.getElementsByClassName('color');
 
 // Gera cores aleatórias
-
 // Função obtida em: https://stackoverflow.com/questions/1484506/random-color-generator
 function generateRandomColor() {
   const values = '0123456789ABCDEF';
@@ -122,6 +121,7 @@ function createBoard() {
   createBoardDiv();
   createBoardLines();
   createBoardColums();
+  bindPixel()
 }
 
 generateBoardBtn.addEventListener('click', createBoard);
@@ -149,6 +149,9 @@ function applyColor(event) {
   eventTarget.style.background = selectedColor;
 }
 
-for (let i = 0; i < pixel.length; i += 1) {
-  pixel[i].addEventListener('click', applyColor);
+function bindPixel() {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', applyColor);
+  }
 }
+bindPixel()
